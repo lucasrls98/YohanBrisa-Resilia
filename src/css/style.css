@@ -1,0 +1,13 @@
+/* importe das fontes */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap%27');
+
+/* importação dos componentes */
+@import './header.css';
+
+:root{
+  --font-principal: 'Lato', sans-serif;
+}
+
+body{
+  background-color:  #E6C3E8;;
+}
