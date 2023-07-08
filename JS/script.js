@@ -9,6 +9,11 @@ function validaFormulario() {
         return false;
     }
 
+    if (email === "" || email.length > 14) {
+        alert("E-mail inválido!");
+        return false;
+    }
+
     if (senha.length < 5) {
         alert("A senha deve ter no mínimo 5 caracteres.");
         return false;
