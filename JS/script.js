@@ -3,6 +3,7 @@ function validaFormulario() {
     var email = document.getElementById("email").value;
     var senha = document.getElementById("senha").value;
     var confirmacaoSenha = document.getElementById("confirmacaoSenha").value;
+    var registroGeral = document.getElementById("regGeral").value;
     
     if (nome === "") {
         alert("Favor inserir seu nome.");
@@ -11,6 +12,11 @@ function validaFormulario() {
 
     if (email === "" || email.length < 14) {
         alert("E-mail inválido!");
+        return false;
+    }
+
+    if (registroGeral === "") {
+        alert("Favor inserir seu RG");
         return false;
     }
 
