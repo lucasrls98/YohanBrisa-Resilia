@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YohanBrisa Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <!--  Modal   -->
+    <div
+      class="modal fade"
+      id="modalLogin"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content login">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLoginTitulo">
+              Entre na Sua Conta
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="loginEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="loginEmail" />
+              </div>
+              <div class="mb-3">
+                <label for="loginSenha" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="loginSenha" />
+              </div>
+              <button type="submit" class="btn btn-light-bg">
+                Entrar na Conta
+              </button>
+              <div id="emailHelp" class="form-text">
+                Esqueceu a senha? <a href="#">Clique aqui</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fecha Modal  -->
+
+    <header>
+      <nav class="navbar navbar-expand-md">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="../images/yohanbrisa 1.png" alt="logo yohanbrisa" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Refrigerantes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contato</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav gap-2">
+              <li class="nav-item">
+                <a
+                  class="btn btn-outline-light-header w-100"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalLogin"
+                  >Login</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-light-bg w-100" href="#">Assine</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="container">
+        <div class="my-5 text-center">
+          <span class="h6 d-block">POSSUI ALGUMA DÚVIDA?</span>
+          <h1 class="display-4">Fale Conosco</h1>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-lg mb-5">
+            <form class="bg-light rounded p-4 box-shadow">
+              <div class="mb-3">
+                <label for="nomeCliente" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nomeCliente" />
+              </div>
+              <div class="mb-3">
+                <label for="emailCliente" class="form-label">Email</label>
+                <input type="email" class="form-control" id="emailCliente" />
+              </div>
+              <div class="mb-3">
+                <label for="mensagemCliente" class="form-label">Mensagem</label>
+                <textarea
+                  class="form-control"
+                  id="mensagemCliente"
+                  rows="3"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-light-bg">
+                Enviar Mensagem
+              </button>
+            </form>
+          </div>
+          <div class="col-lg">
+            <h2 class="h6">NOSSO ENDEREÇO</h2>
+            <ul class="list-unstyled text-secondary">
+              <li>Rua da Brisa, n°420</li>
+              <li>Curitiba-PR</li>
+            </ul>
+
+            <h2 class="h6">DADOS DE CONTATO</h2>
+            <ul class="list-unstyled text-secondary">
+              <li>YohanBrisa@gmail.com.br</li>
+              <li>41 99999-9999</li>
+              <li>De Seg. à Sáb. das 8h às 18h</li>
+            </ul>
+
+            <h2 class="h6">REDES SOCIAIS</h2>
+            <ul class="list-group list-group-horizontal list-unstyled">
+              <li>
+                <a class="btn mb-2" href="#"
+                  ><img src="../images/instagram 1.png" alt="" srcset=""
+                /></a>
+              </li>
+              <li>
+                <a class="btn mb-2" href="#"
+                  ><img src="../images/whatsapp 1.png" alt="" srcset=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="container mt-auto">
+      <footer
+        class="d-flex flex-wrap justify-content-between align-items-center py-2 my-3 border-top"
+      >
+        <p class="col-md-4 mb-0 text-body-secondary">
+          YohanBrisa &copy; 2023 Company, Inc
+        </p>
+
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item">
+            <a href="#" class="nav-link footer px-2">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link footer px-2">Refrigerantes</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link footer px-2">Contato</a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.slim.js"
+      integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <!-- script bootstrap -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"
+  ></script>
+</html>
