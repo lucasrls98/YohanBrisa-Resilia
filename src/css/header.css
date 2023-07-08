@@ -8,15 +8,14 @@
   background-color: #fcf8da;
 }
 
-.btn-outline-light{
+.btn-outline-light-header{
   --bs-btn-color: #fcf8da;
   --bs-btn-border-color:#fcf8da;
   --bs-btn-hover-bg: #FF9733;
 }
 
-.btn-light{
+.btn-light-bg{
   background-color: #FF9733;
-  --bs-btn-color: #750177
   --bs-btn-border-color:#fcf8da;
   --bs-btn-hover-bg: #E6C3E8;
 }
@@ -24,8 +23,4 @@
 .nav-link{
   color: #fcf8da;
   --bs-nav-link-hover-color:#FF9733;
-}
-
-.nav-item{
-  margin: 10px;
 }
