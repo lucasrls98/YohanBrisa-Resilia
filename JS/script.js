@@ -20,5 +20,11 @@ function validaFormulario() {
     }
 
     return true;
-    
+
 }
+
+document.getElementById("formulario").addEventListener("submit", function(event) {
+    if (!validaFormulario()) {
+        event.preventDefault();
+    }
+})
