@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário de Endereço</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Formulário de Endereço</h1>
+    <form id="formularioInput">
+        <label for="cepInput">CEP:</label>
+        <input type="text" id="cepInput" name="cepInput" required>
+        
+        <label for="enderecoInput">Endereço:</label>
+        <input type="text" id="enderecoInput" name="enderecoInput" readonly>
+        
+        <label for="cidadeInput">Cidade:</label>
+        <input type="text" id="cidadeInput" name="cidadeInput" readonly>
+        
+        <label for="bairroInput">Bairro:</label>
+        <input type="text" id="bairroInput" name="bairroInput" readonly>
+        
+        <label for="regiaoInput">Região:</label>
+        <input type="text" id="regiaoInput" name="regiaoInput" readonly>
+        
+        <input type="submit" value="Enviar">
+    </form>
+
+    <!-- Elemento loader -->
+    <div id="loader" class="loader hidden"></div>
+
+</body>
+</html>
