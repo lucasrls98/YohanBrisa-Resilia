@@ -6,12 +6,22 @@
 @import './header.css';
 @import './home.css';
 @import './footer.css';
+@import "./refri.css";
+@import "./contato.css";
+
+
 
 
 :root{
   --font-principal: 'Lato', sans-serif;
+  --roxo-escuro: #750177;
+  --roxo-claro: #E6C3E8;
+  --laranja:#FF9733;
+  --preto: #000000;
+  --azul-linkedin:#0a66c2;
+
 }
 
 body{
-  background-color:  #E6C3E8;;
+  background-color:  #E6C3E8;
 }
