@@ -10,7 +10,7 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body class="d-flex flex-column min-vh-100">
     <!--  Modal   -->
@@ -61,7 +61,7 @@
       <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="./src/images/yohanbrisa 1.png" alt="logo yohanbrisa" />
+            <img src="../images/yohanbrisa 1.png" alt="logo yohanbrisa" />
           </a>
           <button
             class="navbar-toggler"
@@ -77,13 +77,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="../../index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Refrigerantes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./src/pages/contato.html">Contato</a>
+                <a class="nav-link" href="#">Contato</a>
               </li>
             </ul>
             <ul class="navbar-nav gap-2">
@@ -106,82 +106,65 @@
     </header>
 
     <main>
-      <div class="container text-center p-5">
-        <div class="row align-items-center gap-3">
-          <div class="col-md">
-            <img src="./src/images/yohanbrisa 3.png" alt="" />
-            <h1 class="fw-bolder">Refrigerante Yohan Brisa</h1>
-            <p class="text-start">
-              O refrigerante que é leve e solto como a brisa. Pode tomar sem
-              peso na consciência porque é SAUDÁVEL! Faça a assinatura e reçeba
-              em seu lar todas as semanas um engradado com 7 saborosos
-              refrigerantes ©YohanBrisa
-            </p>
-            <div class="d-grid gap-2 col-8 mx-auto">
-              <a class="btn btn-outline-light-home" href="#"
-                >Assinatura Mensal</a
-              >
-              <a class="btn btn-light-home" href="#"
-                >Assinatura Anual com DESCONTO</a
-              >
-            </div>
-          </div>
-          <div class="col-md p-1">
-            <div id="carouselExample" class="carousel slide">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img
-                    src="./src/images/img-1.jpg"
-                    class="d-block w-100 rounded-1"
-                    alt="..."
-                    width="400"
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="./src/images/img-2.jpg"
-                    class="d-block w-100 rounded-1"
-                    alt="..."
-                    width="400"
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="./src/images/img-3.jpg"
-                    class="d-block w-100 rounded-1"
-                    alt="..."
-                    width="400"
-                  />
-                </div>
+      <section class="container">
+        <div class="my-5 text-center">
+          <span class="h6 d-block">POSSUI ALGUMA DÚVIDA?</span>
+          <h1 class="display-4">Fale Conosco</h1>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-lg mb-5">
+            <form class="bg-light rounded p-4 box-shadow">
+              <div class="mb-3">
+                <label for="nomeCliente" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nomeCliente" />
               </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExample"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
+              <div class="mb-3">
+                <label for="emailCliente" class="form-label">Email</label>
+                <input type="email" class="form-control" id="emailCliente" />
+              </div>
+              <div class="mb-3">
+                <label for="mensagemCliente" class="form-label">Mensagem</label>
+                <textarea
+                  class="form-control"
+                  id="mensagemCliente"
+                  rows="3"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-light-bg">
+                Enviar Mensagem
               </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExample"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
+            </form>
+          </div>
+          <div class="col-lg">
+            <h2 class="h6">NOSSO ENDEREÇO</h2>
+            <ul class="list-unstyled text-secondary">
+              <li>Rua da Brisa, n°420</li>
+              <li>Curitiba-PR</li>
+            </ul>
+
+            <h2 class="h6">DADOS DE CONTATO</h2>
+            <ul class="list-unstyled text-secondary">
+              <li>YohanBrisa@gmail.com.br</li>
+              <li>41 99999-9999</li>
+              <li>De Seg. à Sáb. das 8h às 18h</li>
+            </ul>
+
+            <h2 class="h6">REDES SOCIAIS</h2>
+            <ul class="list-group list-group-horizontal list-unstyled">
+              <li>
+                <a class="btn mb-2" href="#"
+                  ><img src="../images/instagram 1.png" alt="" srcset=""
+                /></a>
+              </li>
+              <li>
+                <a class="btn mb-2" href="#"
+                  ><img src="../images/whatsapp 1.png" alt="" srcset=""
+                /></a>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
+      </section>
     </main>
 
     <div class="container mt-auto">

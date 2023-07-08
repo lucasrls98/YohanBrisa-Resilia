@@ -1,0 +1,15 @@
+h1{
+  font-family: 'Abril Fatface', cursive;
+}
+
+.btn-outline-light-home{
+  --bs-btn-color: #750177;
+  --bs-btn-border-color:#750177;
+  --bs-btn-hover-bg: #FF9733;
+}
+
+.btn-light-home{ 
+  background-color: #750177;
+  --bs-btn-color: #E6C3E8;
+  --bs-btn-hover-bg: #FF9733;
+}
