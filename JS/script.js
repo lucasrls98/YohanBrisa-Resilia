@@ -9,7 +9,7 @@ function validaFormulario() {
         return false;
     }
 
-    if (email === "" || email.length > 14) {
+    if (email === "" || email.length < 14) {
         alert("E-mail inválido!");
         return false;
     }
