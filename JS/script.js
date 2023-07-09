@@ -1,9 +1,9 @@
 function validaFormulario() {
-    var nome = document.getElementById("nome").value;
-    var email = document.getElementById("email").value;
-    var senha = document.getElementById("senha").value;
-    var confirmacaoSenha = document.getElementById("confirmacaoSenha").value;
-    var registroGeral = document.getElementById("regGeral").value;
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
+    const confirmacaoSenha = document.getElementById("confirmacaoSenha").value;
+    const registroGeral = document.getElementById("regGeral").value;
     
     if (nome === "") {
         alert("Favor inserir seu nome.");
