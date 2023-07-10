@@ -1,0 +1,11 @@
+.contato-github {
+    --bs-btn-bg: var(--preto);
+    --bs-btn-hover-bg: var(--roxo-escuro);
+    
+
+}
+
+.contato-linkedin{
+    --bs-btn-bg: var(--azul-linkedin);
+    --bs-btn-hover-bg: var(--roxo-escuro);
+}
