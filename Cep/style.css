@@ -1,0 +1,103 @@
+body {
+    /* Estilo de fonte e espaçamento */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    /* Espaçamento abaixo do título */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container {
+    /* Estilo do contêiner do formulário */
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container label {
+    /* Estilo dos rótulos dos campos */
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="submit"],
+#limparButton {
+    /* Estilo dos campos de texto e botão de envio */
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.form-container input[type="submit"] {
+    /* Estilo do botão de envio */
+    background-color: #4c025f;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container input[type="submit"]:hover {
+    /* Estilo do botão de envio ao passar o mouse */
+    background-color: #7f0aae;
+}
+
+#limparButton{
+     /* Estilo do botão de envio */
+     background-color: #4c025f;
+     color: #fff;
+     cursor: pointer;
+     margin-top: 10px;
+     box-shadow: 0 0 10px rgba(154, 6, 170, 0.1);
+}
+
+#limparButton:hover{
+    background-color: #7f0aae;
+}
+
+.loader {
+    /* Estilo do loader */
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    visibility: hidden;
+}
+
+@keyframes spin {
+    /* Animação de rotação do loader */
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    /* Estilo para ocultar elementos */
+    display: none;
+}
+
+.error-message {
+    /* Estilo da mensagem de erro */
+    color: #f44336;
+    margin-top: 5px;
+}
+
+.form-container input[type="text"].erro {
+    /* Estilo para destacar a borda em vermelho quando há erro */
+    border-color: #f44336;
+}

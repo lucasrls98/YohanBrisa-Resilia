@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário de Endereço</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Formulário de Endereço</h1>
+    <div class="form-container">
+        <!-- Início do formulário -->
+        <form id="formularioInput">
+            <!-- Campo de CEP -->
+            <label for="cepInput">CEP:</label>
+            <input type="text" id="cepInput" name="cepInput" required>
+            
+            <!-- Campo de Endereço -->
+            <label for="enderecoInput">Endereço:</label>
+            <input type="text" id="enderecoInput" name="enderecoInput" readonly>
+            
+            <!-- Campo de Número da Casa -->
+            <label for="numeroCasaInput">Número da Casa:</label>
+            <input type="text" id="numeroCasaInput" name="numeroCasaInput" required>
+            
+            <!-- Campo de Cidade -->
+            <label for="cidadeInput">Cidade:</label>
+            <input type="text" id="cidadeInput" name="cidadeInput" readonly>
+            
+            <!-- Campo de Bairro -->
+            <label for="bairroInput">Bairro:</label>
+            <input type="text" id="bairroInput" name="bairroInput" readonly>
+            
+            <!-- Campo de Região -->
+            <label for="regiaoInput">Região:</label>
+            <input type="text" id="regiaoInput" name="regiaoInput" readonly>
+            
+            <!-- Botão de Enviar -->
+            <input type="submit" value="Enviar">
+            
+            <!-- Botao para limpar -->
+            <button type="button" id="limparButton">Limpar</button>
+            
+            <!-- Elemento para exibir o loader -->
+            <div id="loader" class="loader hidden"></div>
+            
+            <!-- Elemento para exibir a mensagem de erro -->
+            <div id="errorMessage" class="error-message hidden"></div>
+        </form>
+    </div>
+</body>
+</html>
