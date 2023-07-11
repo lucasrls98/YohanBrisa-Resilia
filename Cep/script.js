@@ -1,115 +1,125 @@
-// Selecionando os elementos do formulário
-const formularioInput = document.getElementById('formularioInput');
-const cepInput = document.getElementById('cepInput');
-const enderecoInput = document.getElementById('enderecoInput');
-const numeroCasaInput = document.getElementById('numeroCasaInput');
-const cidadeInput = document.getElementById('cidadeInput');
-const bairroInput = document.getElementById('bairroInput');
-const regiaoInput = document.getElementById('regiaoInput');
-const loader = document.getElementById('loader');
-const errorMessage = document.getElementById('errorMessage');
-const limparButton = document.getElementById('limparButton');
+class Formulario {
+  constructor() {
+    // Selecionando os elementos do formulário pelo ID
+    this.formularioInput = document.getElementById('formularioInput');
+    this.cepInput = document.getElementById('cepInput');
+    this.enderecoInput = document.getElementById('enderecoInput');
+    this.numeroCasaInput = document.getElementById('numeroCasaInput');
+    this.cidadeInput = document.getElementById('cidadeInput');
+    this.bairroInput = document.getElementById('bairroInput');
+    this.regiaoInput = document.getElementById('regiaoInput');
+    this.loader = document.getElementById('loader');
+    this.errorMessage = document.getElementById('errorMessage');
+    this.limparButton = document.getElementById('limparButton');
 
-// Ouvinte de evento para o campo de CEP
-cepInput.addEventListener("input", (e) => {
-    const cep = e.target.value;
-    const cepFormatado = formatarCEP(cep);
+    // Adicionando um ouvinte de evento para o input de CEP, para formatá-lo conforme é digitado
+    this.cepInput.addEventListener("input", (e) => {
+      this.formatarCEP(e.target);
+    });
 
-    e.target.value = cepFormatado;
+    // Adicionando um ouvinte de evento para o envio do formulário
+    this.formularioInput.addEventListener("submit", (e) => {
+      e.preventDefault(); // Evitando o comportamento padrão de envio do formulário
+      this.submitFormulario();
+    });
 
-    // Remove a classe de erro ao digitar
-    cepInput.classList.remove("erro");
-});
+    // Adicionando um ouvinte de evento para o botão "Limpar"
+    this.limparButton.addEventListener("click", () => {
+      this.limparCampos();
+    });
+  }
 
-// Ouvinte de evento para o envio do formulário
-formularioInput.addEventListener("submit", (e) => {
-    e.preventDefault();
+  // Método para formatar o CEP no formato 12345-678
+  formatarCEP(input) {
+    const cep = input.value;
+    const cepFormatado = cep.replace(/\D/g, ""); // Removendo todos os caracteres não numéricos
 
-    const cep = cepInput.value;
-    const numeroCasa = numeroCasaInput.value;
+    if (cepFormatado.length > 5) {
+      input.value = cepFormatado.replace(/^(\d{5})(\d)/, "$1-$2"); // Inserindo o traço no meio do CEP
+    } else {
+      input.value = cepFormatado;
+    }
+  }
 
-    // Validação do CEP e número da casa
+  // Método para enviar o formulário
+  submitFormulario() {
+    const cep = this.cepInput.value;
+    const numeroCasa = this.numeroCasaInput.value;
+
+    // Verificando se o CEP possui o formato válido (9 caracteres) e se o número da casa está preenchido
     if (cep.length !== 9 || numeroCasa.trim() === "") {
-        mostrarMensagemDeErro("CEP inválido ou número da casa não preenchido.");
-
-        // Adiciona a classe de erro para destacar a borda em vermelho
-        cepInput.classList.add("erro");
-        return;
+      this.mostrarMensagemDeErro("CEP inválido ou número da casa não preenchido.");
+      this.cepInput.classList.add("erro"); // Adicionando uma classe de erro ao input de CEP
+      return;
     }
 
-    GetEndereco(cep);
-});
+    this.getEndereco(cep); // Obtendo o endereço com base no CEP
+  }
 
-// Função para buscar o endereço com base no CEP
-const GetEndereco = async (cep) => {
-    toggleLoader();
+  // Método assíncrono para obter o endereço através de uma requisição à API ViaCEP
+  async getEndereco(cep) {
+    this.toggleLoader(); // Exibindo o loader (indicador de carregamento)
+    this.cepInput.blur(); // Removendo o foco do input de CEP
 
-    cepInput.blur();
-
-    const cepLimpo = cep.replace(/[^0-9]/g, "");
-
-    const Urlapi = `https://viacep.com.br/ws/${cepLimpo}/json/`;
+    const cepLimpo = cep.replace(/[^0-9]/g, ""); // Removendo todos os caracteres não numéricos do CEP
+    const url = `https://viacep.com.br/ws/${cepLimpo}/json/`; // URL da API ViaCEP com o CEP fornecido
 
     try {
-        const response = await fetch(Urlapi);
+      const response = await fetch(url); // Fazendo a requisição à API ViaCEP
 
-        if (!response.ok) {
-            throw new Error("Erro na requisição");
-        }
+      if (!response.ok) {
+        throw new Error("Erro na requisição"); // Lançando um erro caso a requisição não seja bem-sucedida
+      }
 
-        const data = await response.json();
+      const data = await response.json(); // Convertendo a resposta em formato JSON
 
-        if (data.erro) {
-            throw new Error("CEP não encontrado");
-        }
+      if (data.erro) {
+        throw new Error("CEP não encontrado"); // Lançando um erro caso o CEP não seja encontrado
+      }
 
-        enderecoInput.value = data.logradouro || "";
-        cidadeInput.value = data.localidade || "";
-        bairroInput.value = data.bairro || "";
-        regiaoInput.value = data.uf || "";
+      // Preenchendo os campos do formulário com os dados obtidos da API ViaCEP
+      this.enderecoInput.value = data.logradouro || "";
+      this.cidadeInput.value = data.localidade || "";
+      this.bairroInput.value = data.bairro || "";
+      this.regiaoInput.value = data.uf || "";
 
-        mostrarMensagemDeErro(""); // Limpa a mensagem de erro, se houver
+      this.mostrarMensagemDeErro(""); // Limpar a mensagem de erro, se houver
 
     } catch (error) {
-        mostrarMensagemDeErro(error.message);
+      this.mostrarMensagemDeErro(error.message); // Exibindo a mensagem de erro
     } finally {
-        toggleLoader();
+      this.toggleLoader(); // Ocultando o loader
     }
-};
+  }
 
-// Função para exibir ou ocultar o loader
-function toggleLoader() {
-    loader.classList.toggle("hidden");
-}
+  // Método para alternar a exibição do loader
+  toggleLoader() {
+    this.loader.classList.toggle("hidden"); // Alternando a classe "hidden" para exibir ou ocultar o loader
+  }
 
-// Função para exibir a mensagem de erro
-function mostrarMensagemDeErro(mensagem) {
-    errorMessage.textContent = mensagem;
+  // Método para exibir ou ocultar a mensagem de erro
+  mostrarMensagemDeErro(mensagem) {
+    this.errorMessage.textContent = mensagem; // Definindo o texto da mensagem de erro
 
     if (mensagem === "") {
-        errorMessage.classList.add("hidden");
+      this.errorMessage.classList.add("hidden"); // Ocultando a mensagem de erro
     } else {
-        errorMessage.classList.remove("hidden");
+      this.errorMessage.classList.remove("hidden"); // Exibindo a mensagem de erro
     }
+  }
+
+  // Método para limpar todos os campos do formulário
+  limparCampos() {
+    this.cepInput.value = "";
+    this.numeroCasaInput.value = "";
+    this.enderecoInput.value = "";
+    this.cidadeInput.value = "";
+    this.bairroInput.value = "";
+    this.regiaoInput.value = "";
+    this.mostrarMensagemDeErro(""); // Limpar a mensagem de erro, se houver
+    this.cepInput.classList.remove("erro"); // Remover a classe de erro do input de CEP
+  }
 }
 
-// Função para formatar o CEP
-function formatarCEP(cep) {
-    cep = cep.replace(/\D/g, "");
-
-    if (cep.length > 5) {
-        cep = cep.replace(/^(\d{5})(\d)/, "$1-$2");
-    }
-
-    return cep;
-}
-limparButton.addEventListener("click", () => {
-    cepInput.value = "";
-    numeroCasaInput.value = "";
-    enderecoInput.value = "";
-    cidadeInput.value = "";
-    bairroInput.value = "";
-    regiaoInput.value = "";
-    mostrarMensagemDeErro(""); // Limpar mensagem de erro, se houver
-    cepInput.classList.remove("erro"); // Remover classe de erro
-  });
+// Instanciando a classe Formulario para inicializar o formulário
+const formulario = new Formulario();
