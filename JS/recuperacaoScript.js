@@ -24,7 +24,9 @@ botaoEnvio.addEventListener("click", function(event) {
 
     //É criada uma condicional para verificação da validade do E-mail a partir da utilização do método 'validar()'
     if (validadorEmail.validar()) {
-        alert("E-mail enviado com sucesso!");
+        // alert("E-mail enviado com sucesso!");
+        const modal = new bootstrap.Modal(document.getElementById('cadastroEnviado'));
+        modal.show();
     } else {
         alert("E-mail inválido!");
     }
