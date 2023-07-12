@@ -8,51 +8,67 @@
 <body>
   <h1>Se cadastre!</h1>
   <form id="formularioInput">
+    <!-- Campo de Nome -->
     <label for="nomeInput">Nome:</label>
     <input type="text" id="nomeInput" required>
 
+    <!-- Campo de Email -->
     <label for="emailInput">Email:</label>
     <input type="email" id="emailInput" required>
 
+    <!-- Campo de Senha -->
     <label for="senhaInput">Senha:</label>
     <input type="password" id="senhaInput" required>
 
+    <!-- Campo de Confirmação de Senha -->
     <label for="confirmacaoSenhaInput">Confirmação de Senha:</label>
     <input type="password" id="confirmacaoSenhaInput" required>
 
+    <!-- Campo de RG -->
     <label for="rgInput">RG:</label>
     <input type="text" id="rgInput" required>
 
+    <!-- Campo de CEP -->
     <label for="cepInput">CEP:</label>
     <input type="text" id="cepInput" required>
 
+    <!-- Campo de Endereço -->
     <label for="enderecoInput">Endereço:</label>
     <input type="text" id="enderecoInput" readonly>
 
+    <!-- Campo de Número da Casa -->
     <label for="numeroCasaInput">Número da Casa:</label>
     <input type="text" id="numeroCasaInput" required>
 
+    <!-- Campo de Complemento -->
     <label for="complementoInput">Complemento:</label>
     <input type="text" id="complementoInput">
 
+    <!-- Campo de Cidade -->
     <label for="cidadeInput">Cidade:</label>
     <input type="text" id="cidadeInput" readonly>
 
+    <!-- Campo de Bairro -->
     <label for="bairroInput">Bairro:</label>
     <input type="text" id="bairroInput" readonly>
 
+    <!-- Campo de Região -->
     <label for="regiaoInput">Região:</label>
     <input type="text" id="regiaoInput" readonly>
 
+    <!-- Botão Enviar -->
     <button type="submit" id="enviarButton">Enviar</button>
 
+    <!-- Botão Limpar -->
     <button type="button" id="limparButton">Limpar</button>
 
+    <!-- Elemento para exibir o loader -->
     <div id="loader" class="hidden">
       <div class="loader-spinner"></div>
       <span>Enviando...</span>
     </div>
 
+    <!-- Elemento para exibir mensagens de erro -->
     <div id="errorMessage" class="hidden"></div>
   </form>
 </body>
