@@ -26,3 +26,7 @@
 body{
   background-color:  #E6C3E8;
 }
+
+*{
+  font-family:var(--font-principal) ;
+}

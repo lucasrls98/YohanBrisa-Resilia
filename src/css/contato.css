@@ -1,11 +1,64 @@
 .contato-github {
     --bs-btn-bg: var(--preto);
     --bs-btn-hover-bg: var(--roxo-escuro);
-    
+
 
 }
 
-.contato-linkedin{
+.contato-linkedin {
     --bs-btn-bg: var(--azul-linkedin);
     --bs-btn-hover-bg: var(--roxo-escuro);
+}
+
+.fileira-um,
+.fileira-dois {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 100px 100px 100px;
+}
+
+.foto-equipe{
+    width: 250px;
+    border-radius: 50%;
+}
+
+/* estilos dos blocos com integrantes da equipe  */
+
+.bloco {
+    text-align: center;
+    margin: 1rem;
+}
+
+.bloco>h2 {
+    
+    margin: 0.8rem;
+}
+
+.bloco>h3 {
+    margin: 0.8rem;
+    color: var(--roxo-escuro);
+}
+
+.bloco>p {
+    margin: 0 4rem;
+    margin-bottom: 10px;
+}
+
+.equipe-linkedin-icon {
+    margin: 0.8rem;
+}
+
+
+
+@media screen and (max-width:1200px) {
+
+    .fileira-um,
+    .fileira-dois {
+        display: block;
+        margin: auto;
+    }
+
+    .bloco>p {
+        margin: auto;
+    }
 }
