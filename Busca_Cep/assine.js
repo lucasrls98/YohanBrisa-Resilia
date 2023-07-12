@@ -18,6 +18,7 @@ class Formulario {
     this.errorMessage = document.getElementById('errorMessage');
     this.enviarButton = document.getElementById('enviarButton');
     this.limparButton = document.getElementById('limparButton');
+    this.validarCepButton = document.getElementById('validarCepButton');
 
     // Adicionando ouvintes de evento aos campos do formulário
     this.senhaInput.addEventListener("input", () => {
@@ -46,6 +47,10 @@ class Formulario {
 
     this.limparButton.addEventListener("click", () => {
       this.limparCampos();
+    });
+
+    this.validarCepButton.addEventListener("click", () => {
+      this.validarCEP();
     });
   }
 
@@ -105,6 +110,20 @@ class Formulario {
     return true;
   }
 
+  // Função para validar o CEP
+  validarCEP() {
+    const cep = this.cepInput.value;
+    const cepLimpo = cep.replace(/[^0-9]/g, "");
+
+    if (cepLimpo.length !== 8) {
+      this.mostrarMensagemDeErro("CEP inválido.");
+      this.cepInput.classList.add("erro");
+      return;
+    }
+
+    this.getEndereco(cepLimpo);
+  }
+
   // Função para enviar o formulário
   submitFormulario() {
     const cep = this.cepInput.value;
@@ -125,7 +144,9 @@ class Formulario {
       return;
     }
 
-    this.getEndereco(cep);
+    // Restante do código para enviar o formulário
+    console.log("Formulário enviado com sucesso!");
+    this.limparCampos();
   }
 
   // Função para buscar o endereço com base no CEP
@@ -133,8 +154,7 @@ class Formulario {
     this.toggleLoader();
     this.cepInput.blur();
 
-    const cepLimpo = cep.replace(/[^0-9]/g, "");
-    const url = `https://viacep.com.br/ws/${cepLimpo}/json/`;
+    const url = `https://viacep.com.br/ws/${cep}/json/`;
 
     try {
       const response = await fetch(url);
@@ -186,6 +206,7 @@ class Formulario {
     this.mostrarMensagemDeErro("");
     this.senhaInput.classList.remove("erro");
     this.confirmacaoSenhaInput.classList.remove("erro");
+    this.cepInput.classList.remove("erro");
   }
 }
 
