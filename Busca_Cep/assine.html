@@ -1,76 +1,333 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Formulário</title>
-  <link rel="stylesheet" href="assine.css">
-  <script src="assine.js" defer></script>
-</head>
-<body>
-  <h1>Se cadastre!</h1>
-  <form id="formularioInput">
-    <!-- Campo de Nome -->
-    <label for="nomeInput">Nome:</label>
-    <input type="text" id="nomeInput" required>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assine Aqui</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <script src="assine.js" defer></script>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <!--  Modal   -->
+    <div
+      class="modal fade"
+      id="modalLogin"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content login">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLoginTitulo">
+              Entre na Sua Conta
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="loginEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="loginEmail" />
+              </div>
+              <div class="mb-3">
+                <label for="loginSenha" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="loginSenha" />
+              </div>
+              <button type="submit" class="btn btn-light-bg">
+                Entrar na Conta
+              </button>
+              <div id="emailHelp" class="form-text">
+                Esqueceu a senha? <a href="#">Clique aqui</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fecha Modal  -->
+    <header>
+      <nav class="navbar navbar-expand-md">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/src/images/yohanbrisa 1.png" alt="logo yohanbrisa" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="refri.html">Refrigerantes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/src/pages/contato.html">Contato</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav gap-2">
+              <li class="nav-item">
+                <a
+                  class="btn btn-outline-light-header w-100"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalLogin"
+                  >Login</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-light-bg w-100" href="/src/pages/assine.html"
+                  >Assine</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="container">
+      <div class="my-5 text-center">
+        <span class="h6 d-block">Não perca tempo!</span>
+        <h2 class="display-4">ASSINE AGORA! 🥤</h2>
+      </div>
+      <div class="row justify-content-center">
+        <form class="row col-md-8 p-3 custom-form" id="formularioInput">
+          <!-- Elemento para exibir mensagens de erro -->
+          <div id="errorMessage" class="hidden"></div>
+          <!-- Campo de Nome -->
+          <div class="col-md-12">
+            <label for="nomeInput" class="form-label">Nome:</label>
+            <input class="form-control" type="text" id="nomeInput" required />
+          </div>
+          <!-- Campo de Email -->
+          <div class="col-md-6">
+            <label for="emailInput" class="form-label">Email:</label>
+            <input class="form-control" type="email" id="emailInput" required />
+          </div>
 
-    <!-- Campo de Email -->
-    <label for="emailInput">Email:</label>
-    <input type="email" id="emailInput" required>
+          <!-- Campo de RG -->
+          <div class="col-md-6">
+            <label for="rgInput" class="form-label">RG:</label>
+            <input class="form-control" type="text" id="rgInput" required />
+          </div>
 
-    <!-- Campo de Senha -->
-    <label for="senhaInput">Senha:</label>
-    <input type="password" id="senhaInput" required>
+          <!-- Campo de Senha -->
+          <div class="col-md-6">
+            <label for="senhaInput" class="form-label">Senha:</label>
+            <input
+              class="form-control"
+              type="password"
+              id="senhaInput"
+              required
+            />
+          </div>
 
-    <!-- Campo de Confirmação de Senha -->
-    <label for="confirmacaoSenhaInput">Confirmação de Senha:</label>
-    <input type="password" id="confirmacaoSenhaInput" required>
+          <!-- Campo de Confirmação de Senha -->
+          <div class="col-md-6">
+            <label for="confirmacaoSenhaInput" class="form-label"
+              >Confirmação de Senha:</label
+            >
+            <input
+              class="form-control"
+              type="password"
+              id="confirmacaoSenhaInput"
+              required
+            />
+          </div>
 
-    <!-- Campo de RG -->
-    <label for="rgInput">RG:</label>
-    <input type="text" id="rgInput" required>
+          <!-- Campo de CEP -->
+          <!-- <div class="col-md-4">
+            <label for="cepInput" class="form-label">CEP:</label>
+            <input class="form-control" type="text" id="cepInput" required />
+          </div>
+          <div class="col-md-4">
+            <button
+              type="button"
+              class="botao-refri btn btn-primary col-12"
+              id="validarCepButton"
+            >
+              Buscar CEP
+            </button>
+          </div> -->
+          <div class="col-md-8">
+            <label for="cepInput" class="form-label">CEP:</label>
+            <div class="input-group mb-3">
+              <input
+                class="form-control"
+                type="text"
+                id="cepInput"
+                required
+                aria-label="Recipient's username"
+                aria-describedby="button-addon2"
+              />
+              <button
+                type="button"
+                class="botao-refri btn btn-primary"
+                id="validarCepButton"
+              >
+                Buscar CEP
+              </button>
+            </div>
+          </div>
 
-    <!-- Campo de CEP -->
-    <label for="cepInput">CEP:</label>
-    <input type="text" id="cepInput" required>
-    <button type="button" id="validarCepButton">Buscar CEP</button>
+          <!-- Campo de Endereço -->
+          <div class="col-8">
+            <label for="enderecoInput" class="form-label">Endereço:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="enderecoInput"
+              readonly
+            />
+          </div>
 
-    <!-- Campo de Endereço -->
-    <label for="enderecoInput">Endereço:</label>
-    <input type="text" id="enderecoInput" readonly>
+          <!-- Campo de Número da Casa -->
+          <div class="col-md-4">
+            <label for="numeroCasaInput" class="form-label"
+              >Número da Casa:</label
+            >
+            <input
+              class="form-control"
+              type="text"
+              id="numeroCasaInput"
+              required
+            />
+          </div>
 
-    <!-- Campo de Número da Casa -->
-    <label for="numeroCasaInput">Número da Casa:</label>
-    <input type="text" id="numeroCasaInput" required>
+          <!-- Campo de Complemento -->
+          <div class="col-md-4">
+            <label for="complementoInput" class="form-label"
+              >Complemento:</label
+            >
+            <input type="text" class="form-control" id="complementoInput" />
+          </div>
 
-    <!-- Campo de Complemento -->
-    <label for="complementoInput">Complemento:</label>
-    <input type="text" id="complementoInput">
+          <!-- Campo de Cidade -->
+          <div class="col-md-3">
+            <label for="cidadeInput" class="form-label">Cidade:</label>
+            <input class="form-control" type="text" id="cidadeInput" readonly />
+          </div>
 
-    <!-- Campo de Cidade -->
-    <label for="cidadeInput">Cidade:</label>
-    <input type="text" id="cidadeInput" readonly>
+          <!-- Campo de Bairro -->
+          <div class="col-md-3">
+            <label for="bairroInput" class="form-label">Bairro:</label>
+            <input class="form-control" type="text" id="bairroInput" readonly />
+          </div>
 
-    <!-- Campo de Bairro -->
-    <label for="bairroInput">Bairro:</label>
-    <input type="text" id="bairroInput" readonly>
+          <!-- Campo de Região -->
+          <div class="col-md-2">
+            <label for="regiaoInput" class="form-label">Região:</label>
+            <input class="form-control" type="text" id="regiaoInput" readonly />
+          </div>
 
-    <!-- Campo de Região -->
-    <label for="regiaoInput">Região:</label>
-    <input type="text" id="regiaoInput" readonly>
+          <!-- Botão Enviar -->
+          <div class="col-6 g-2">
+            <button
+              type="submit"
+              class="botao-refri btn btn-primary col-12"
+              id="enviarButton"
+              data-bs-target="#cadastroEnviado"
+            >
+              Enviar
+            </button>
+          </div>
 
-    <!-- Botão Enviar -->
-    <button type="submit" id="enviarButton">Enviar</button>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="cadastroEnviado"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <p class="h3">Cadastro realizado com sucesso!</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <!-- Botão Limpar -->
-    <button type="button" id="limparButton">Limpar</button>
+          <!-- Botão Limpar -->
+          <div class="col-6 g-2">
+            <button
+              type="button"
+              class="btn btn-outline-light-header col-4"
+              id="limparButton"
+            >
+              Limpar
+            </button>
+          </div>
+          <!-- Elemento para exibir o loader -->
+          <div id="loader" class="hidden">
+            <div class="loader-spinner"></div>
+            <span>Enviando...</span>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="container mt-auto">
+      <footer
+        class="d-flex flex-wrap justify-content-between align-items-center py-2 my-3 border-top"
+      >
+        <p class="col-md-4 mb-0 text-body-secondary">
+          YohanBrisa &copy; 2023 Company, Inc
+        </p>
 
-    <!-- Elemento para exibir o loader -->
-    <div id="loader" class="hidden">
-      <div class="loader-spinner"></div>
-      <span>Enviando...</span>
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item">
+            <a href="#" class="nav-link footer px-2">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link footer px-2">Refrigerantes</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link footer px-2">Contato</a>
+          </li>
+        </ul>
+      </footer>
     </div>
 
-    <!-- Elemento para exibir mensagens de erro -->
-    <div id="errorMessage" class="hidden"></div>
-  </form>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.slim.js"
+      integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <!-- script bootstrap -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"
+  ></script>
 </html>
