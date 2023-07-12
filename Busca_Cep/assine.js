@@ -144,9 +144,14 @@ class Formulario {
       return;
     }
 
-    // Restante do código para enviar o formulário
-    console.log("Formulário enviado com sucesso!");
+  
+      const modal = new bootstrap.Modal(document.getElementById('cadastroEnviado'));
+      modal.show();
+
+    // alert("Formulário enviado com sucesso!");
     this.limparCampos();
+    // window.location.href = "../index.html";
+    
   }
 
   // Função para buscar o endereço com base no CEP
@@ -185,10 +190,13 @@ class Formulario {
 
   // Função para exibir a mensagem de erro
   mostrarMensagemDeErro(mensagem) {
-    this.errorMessage.textContent = mensagem;
+    this.errorMessage.innerHTML = `<div class="alert alert-danger" role="alert">
+    ${mensagem}
+  </div>`;
 
     if (mensagem === "") {
       this.errorMessage.classList.add("hidden");
+      this.errorMessage.innerHTML = ''
     } else {
       this.errorMessage.classList.remove("hidden");
     }
