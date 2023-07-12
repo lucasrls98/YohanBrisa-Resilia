@@ -23,10 +23,24 @@ botaoEnvio.addEventListener("click", function(event) {
     const validadorEmail = new emailValidacao(email);
 
     //É criada uma condicional para verificação da validade do E-mail a partir da utilização do método 'validar()'
+    // if (validadorEmail.validar()) {
+    //     // alert("E-mail enviado com sucesso!");
+    //     const modal = new bootstrap.Modal(document.getElementById('cadastroEnviado'));
+    //     modal.show();
+    //     const modalLogin = new bootstrap.Modal(document.getElementById('modalLogin'));
+    //     modalLogin.show(); // Abre o modal de login
+    // } else {
+    //     alert("E-mail inválido!");
+    // }
     if (validadorEmail.validar()) {
-        // alert("E-mail enviado com sucesso!");
-        const modal = new bootstrap.Modal(document.getElementById('cadastroEnviado'));
-        modal.show();
+        const modalRecuperacao = new bootstrap.Modal(document.getElementById('cadastroEnviado'));
+        modalRecuperacao.show(); // Mostra o modal de recuperação
+    
+        setTimeout(function() {
+            const modalLogin = new bootstrap.Modal(document.getElementById('modalLogin'));
+            modalRecuperacao.hide(); // Fecha o modal de recuperação
+            modalLogin.show(); // Mostra o modal de login
+        }, 2000); // 2 segundos de atraso (2000 milissegundos)
     } else {
         alert("E-mail inválido!");
     }
