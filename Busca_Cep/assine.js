@@ -125,7 +125,42 @@ class Formulario {
       return;
     }
 
-    // Restante do código para enviar o formulário
+    this.getEndereco(cep);
+  }
+
+  // Função para buscar o endereço com base no CEP
+  async getEndereco(cep) {
+    this.toggleLoader();
+    this.cepInput.blur();
+
+    const cepLimpo = cep.replace(/[^0-9]/g, "");
+    const url = `https://viacep.com.br/ws/${cepLimpo}/json/`;
+
+    try {
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        throw new Error("Erro na requisição");
+      }
+
+      const data = await response.json();
+
+      if (data.erro) {
+        throw new Error("CEP não encontrado");
+      }
+
+      this.enderecoInput.value = data.logradouro || "";
+      this.cidadeInput.value = data.localidade || "";
+      this.bairroInput.value = data.bairro || "";
+      this.regiaoInput.value = data.uf || "";
+
+      this.mostrarMensagemDeErro(""); // Limpar a mensagem de erro, se houver
+
+    } catch (error) {
+      this.mostrarMensagemDeErro(error.message);
+    } finally {
+      this.toggleLoader();
+    }
   }
 
   // Função para exibir a mensagem de erro
@@ -137,6 +172,11 @@ class Formulario {
     } else {
       this.errorMessage.classList.remove("hidden");
     }
+  }
+
+  // Função para exibir ou ocultar o loader
+  toggleLoader() {
+    this.loader.classList.toggle("hidden");
   }
 
   // Função para limpar os campos do formulário
