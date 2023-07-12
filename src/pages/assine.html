@@ -10,7 +10,75 @@
     <link rel="stylesheet" href="/src/css/style.css" />
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
+    <!--  Modal   -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content login">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLoginTitulo">
+                        Entre na Sua Conta
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginSenha" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="loginSenha" />
+                        </div>
+                        <button type="submit" class="btn btn-light-bg">
+                            Entrar na Conta
+                        </button>
+                        <div id="emailHelp" class="form-text">
+                            Esqueceu a senha? <a href="#">Clique aqui</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fecha Modal  -->
+    <header>
+        <nav class="navbar navbar-expand-md">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="/src/images/yohanbrisa 1.png" alt="logo yohanbrisa" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="refri.html">Refrigerantes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/src/pages/contato.html">Contato</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav gap-2">
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light-header w-100" href="#" data-bs-toggle="modal"
+                                data-bs-target="#modalLogin">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-light-bg w-100" href="#">Assine</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
     <form id="formulario">
         <input type="text" id="nome" placeholder="Insira seu nome" required>
         <input type="email" id="email" placeholder="Insira seu E-mail" required>
