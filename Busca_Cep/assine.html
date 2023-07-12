@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulário</title>
+  <link rel="stylesheet" href="assine.css">
+  <script src="assine.js" defer></script>
+</head>
+<body>
+  <h1>Se cadastre!</h1>
+  <form id="formularioInput">
+    <label for="nomeInput">Nome:</label>
+    <input type="text" id="nomeInput" required>
+
+    <label for="emailInput">Email:</label>
+    <input type="email" id="emailInput" required>
+
+    <label for="senhaInput">Senha:</label>
+    <input type="password" id="senhaInput" required>
+
+    <label for="confirmacaoSenhaInput">Confirmação de Senha:</label>
+    <input type="password" id="confirmacaoSenhaInput" required>
+
+    <label for="rgInput">RG:</label>
+    <input type="text" id="rgInput" required>
+
+    <label for="cepInput">CEP:</label>
+    <input type="text" id="cepInput" required>
+
+    <label for="enderecoInput">Endereço:</label>
+    <input type="text" id="enderecoInput" readonly>
+
+    <label for="numeroCasaInput">Número da Casa:</label>
+    <input type="text" id="numeroCasaInput" required>
+
+    <label for="complementoInput">Complemento:</label>
+    <input type="text" id="complementoInput">
+
+    <label for="cidadeInput">Cidade:</label>
+    <input type="text" id="cidadeInput" readonly>
+
+    <label for="bairroInput">Bairro:</label>
+    <input type="text" id="bairroInput" readonly>
+
+    <label for="regiaoInput">Região:</label>
+    <input type="text" id="regiaoInput" readonly>
+
+    <button type="submit" id="enviarButton">Enviar</button>
+
+    <button type="button" id="limparButton">Limpar</button>
+
+    <div id="loader" class="hidden">
+      <div class="loader-spinner"></div>
+      <span>Enviando...</span>
+    </div>
+
+    <div id="errorMessage" class="hidden"></div>
+  </form>
+</body>
+</html>
