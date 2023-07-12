@@ -22,16 +22,7 @@ botaoEnvio.addEventListener("click", function(event) {
     //Aqui, é criada uma instância do validador de E-mail
     const validadorEmail = new emailValidacao(email);
 
-    //É criada uma condicional para verificação da validade do E-mail a partir da utilização do método 'validar()'
-    // if (validadorEmail.validar()) {
-    //     // alert("E-mail enviado com sucesso!");
-    //     const modal = new bootstrap.Modal(document.getElementById('cadastroEnviado'));
-    //     modal.show();
-    //     const modalLogin = new bootstrap.Modal(document.getElementById('modalLogin'));
-    //     modalLogin.show(); // Abre o modal de login
-    // } else {
-    //     alert("E-mail inválido!");
-    // }
+
     if (validadorEmail.validar()) {
         const modalRecuperacao = new bootstrap.Modal(document.getElementById('cadastroEnviado'));
         modalRecuperacao.show(); // Mostra o modal de recuperação
