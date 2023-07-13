@@ -5,8 +5,16 @@ class emailValidacao {
     }
     //Essa parte testa o e-mail fornecido pelo usuário para que seja avaliado pelo padrão Regex
     validar() {
-        const emailRegex = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
-        return emailRegex.test(this.email);
+        const posicaoArroba = this.email.indexOf("@");
+        const posicaoPonto = this.email.indexOf(".", posicaoArroba);
+
+        if (posicaoArroba > -1 && posicaoPonto > posicaoArroba) {
+            const depoisArroba = this.email.substring(posicaoArroba + 1, posicaoPonto);
+            if (depoisArroba.length >= 5) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 //As constantes são declaradas, e os IDs dos elementos obtidos do HTML a partir do DOM
