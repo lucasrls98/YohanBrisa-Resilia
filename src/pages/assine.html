@@ -10,9 +10,9 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/src/css/style.css" />
-    <script src="/src/JS/assine.js" defer></script>
-    <script src="/src/JS/login.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../JS/assine.js" defer></script>
+    <script src="../JS/login.js" defer></script>
   </head>
   <body class="d-flex flex-column min-vh-100">
     <!--  Modal   -->
@@ -40,17 +40,30 @@
             <form>
               <div class="mb-3">
                 <label for="loginEmail" class="form-label">Email</label>
-                <input type="email" class="form-control" id="loginEmail" placeholder="Digite seu email" required/>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="loginEmail"
+                  placeholder="Digite seu email"
+                  required
+                />
               </div>
               <div class="mb-3">
                 <label for="loginSenha" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="loginSenha" placeholder="Digite sua senha" required/>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="loginSenha"
+                  placeholder="Digite sua senha"
+                  required
+                />
               </div>
               <button type="submit" class="btn btn-light-bg">
                 Entrar na Conta
               </button>
               <div id="emailHelp" class="form-text">
-                Esqueceu a senha? <a href="/src/pages/recuperacao.html">Clique aqui</a>
+                Esqueceu a senha?
+                <a href="../pages/recuperacao.html">Clique aqui</a>
               </div>
             </form>
           </div>
@@ -62,7 +75,7 @@
       <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="/src/images/yohanbrisa 1.png" alt="logo yohanbrisa" />
+            <img src="../images/yohanbrisa 1.png" alt="logo yohanbrisa" />
           </a>
           <button
             class="navbar-toggler"
@@ -78,13 +91,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="/index.html">Home</a>
+                <a class="nav-link" href="../../index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="refri.html">Refrigerantes</a>
+                <a class="nav-link" href="../pages/refri.html">Refrigerantes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/src/pages/contato.html">Contato</a>
+                <a class="nav-link" href="../pages/contato.html">Contato</a>
               </li>
             </ul>
             <ul class="navbar-nav gap-2">
@@ -98,7 +111,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="btn btn-light-bg w-100" href="/src/pages/assine.html"
+                <a class="btn btn-light-bg w-100" href="../pages/assine.html"
                   >Assine</a
                 >
               </li>
@@ -156,7 +169,7 @@
               required
             />
           </div>
-          
+
           <div class="col-md-8">
             <label for="cepInput" class="form-label">CEP:</label>
             <div class="input-group mb-3">
@@ -259,7 +272,10 @@
                   ></button>
                 </div>
                 <div class="modal-body">
-                  <p class="h3">Assinatura Realizada com sucesso! Agora você pode curtir a Brisa de maneira saudável!</p>
+                  <p class="h3">
+                    Assinatura Realizada com sucesso! Agora você pode curtir a
+                    Brisa de maneira saudável!
+                  </p>
                 </div>
               </div>
             </div>
@@ -269,7 +285,7 @@
           <div class="col-6 g-2">
             <button
               type="button"
-              class="btn btn-outline-light-header col-4"
+              class="btn btn-outline-light-header"
               id="limparButton"
             >
               Limpar
@@ -278,9 +294,7 @@
           <!-- Elemento para exibir o loader -->
           <div id="loader" class="hidden">
             <div class="loader-spinner"></div>
-            
           </div>
-          
         </form>
       </div>
     </section>
@@ -294,13 +308,17 @@
 
         <ul class="nav col-md-4 justify-content-end">
           <li class="nav-item">
-            <a href="#" class="nav-link footer px-2">Home</a>
+            <a href="../../index.html" class="nav-link footer px-2">Home</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link footer px-2">Refrigerantes</a>
+            <a href="../pages/refri.html" class="nav-link footer px-2"
+              >Refrigerantes</a
+            >
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link footer px-2">Contato</a>
+            <a href="../pages/contato.html" class="nav-link footer px-2"
+              >Contato</a
+            >
           </li>
         </ul>
       </footer>
