@@ -5,21 +5,15 @@ Este é o repositório do projeto do Módulo 2 do curso de Desenvolvimento Fulls
 
 
 
-<img src="https://github.com/lucasrls98/YohanBrisa-Resilia/assets/105527638/b6b017fd-5b42-4df1-943f-7526d90fc64a" alt="Descrição da imagem" width="600">
-
- 
- 
+![ezgif com-video-to-gif](https://github.com/lucasrls98/YohanBrisa-Resilia/assets/105527638/97e5f270-5c24-4bcf-9c5b-70d875bc1cbe) 
 
 
 ## Proposta
 - O projeto precisava seguir requisitos colocados pela Resilia Educação, com foco no Front End e ênfase no JAVASCRIPT, OOP e utilização da API ViaCEP.
 
-
-
 ## Estrutura do Projeto
 
-<img src="https://github.com/lucasrls98/YohanBrisa-Resilia/assets/105527638/fd1fcdb9-1f93-46ce-8f76-73d9e31ab0c7" alt="imagem da estrutura de pastas" width="200">
-
+![image](https://github.com/lucasrls98/YohanBrisa-Resilia/assets/105527638/6cc3a0b4-0877-45db-b85a-2cfa1381917d)
 
 ## Evidência de Entrega
 
@@ -35,7 +29,8 @@ Fique à vontade para explorar o código, sugerir melhorias ou entrar em contato
 Agradecemos a oportunidade de desenvolver o projeto do YohanBrisa e esperamos que apreciem o resultado final.
 
 
-<img src="https://github.com/lucasrls98/YohanBrisa-Resilia/assets/105527638/0baaa6e0-ee57-4526-b034-478bd2b05b1f" alt="imagem da equipe com cada integrante" width="500">
+![image](https://github.com/lucasrls98/YohanBrisa-Resilia/assets/105527638/a5449a22-94c2-4924-915c-a2b0cbb978df)
+
 
 
 
