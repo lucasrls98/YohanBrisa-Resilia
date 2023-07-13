@@ -1,9 +1,11 @@
 # YohanBrisa - Plataforma de Serviço de Assinatura de Refrigerantes Saudável 🥤💜
 
 Este é o repositório do projeto do Módulo 2 do curso de Desenvolvimento Fullstack da Resilia Educação💛🖤 (Códigos do Amanhã - EBANX💙). É um site da plataforma do refrigerante fictício YohanBrisa, com um serviço de assinatura de refrigerantes saudáveis. O objetivo deste projeto foi criar uma plataforma online onde os usuários podem se inscrever na lista de espera para receberem engradados de refrigerante semanalmente. O site foi desenvolvido como parte de um projeto de equipe, utilizando HTML, CSS Bootstrap e JavaScript com OOP.
-<div align="center">
-  <img src="" alt="Descrição da YohanBrisa" width="800">
-</div>
+
+
+
+
+<img src="https://github.com/lucasrls98/YohanBrisa-Resilia/assets/105527638/b6b017fd-5b42-4df1-943f-7526d90fc64a" alt="Descrição da imagem" width="600">
 
  
  
@@ -16,9 +18,7 @@ Este é o repositório do projeto do Módulo 2 do curso de Desenvolvimento Fulls
 
 ## Estrutura do Projeto
 
-<p align="center">
-  <img src="" alt="Folders do projeto" width="250">
-</p>
+<img src="https://github.com/lucasrls98/YohanBrisa-Resilia/assets/105527638/fd1fcdb9-1f93-46ce-8f76-73d9e31ab0c7" alt="imagem da estrutura de pastas" width="200">
 
 
 ## Evidência de Entrega
@@ -35,9 +35,8 @@ Fique à vontade para explorar o código, sugerir melhorias ou entrar em contato
 Agradecemos a oportunidade de desenvolver o projeto do YohanBrisa e esperamos que apreciem o resultado final.
 
 
-<p align="center">
-  <img src="" alt="Página Nossa Equipe" width="600">
-</p>
+<img src="https://github.com/lucasrls98/YohanBrisa-Resilia/assets/105527638/0baaa6e0-ee57-4526-b034-478bd2b05b1f" alt="imagem da equipe com cada integrante" width="500">
+
 
 
 Atenciosamente,
