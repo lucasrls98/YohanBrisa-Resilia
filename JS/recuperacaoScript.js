@@ -9,10 +9,12 @@ class emailValidacao {
         const posicaoPonto = this.email.indexOf(".", posicaoArroba);
 
         if(posicaoArroba > -1 && posicaoPonto > posicaoArroba) {
-            return true;
-        } else {
-            return false;
+            const depoisArroba = this.email.substring(posicaoArroba + 1, posicaoPonto);
+            if (depoisArroba.length >= 5) {
+                return true;
+            }
         }
+        return false;
     }
 }
 //As constantes são declaradas, e os IDs dos elementos obtidos do HTML a partir do DOM
