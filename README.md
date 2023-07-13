@@ -7,7 +7,7 @@ Este é o repositório do projeto do Módulo 2 do curso de Desenvolvimento Fulls
 
  
  
-O projeto precisava seguir os seguintes requisitos:
+
 
 ## Proposta
 - O projeto precisava seguir requisitos colocados pela Resilia Educação, com foco no Front End e ênfase no JAVASCRIPT, OOP e utilização da API ViaCEP.
