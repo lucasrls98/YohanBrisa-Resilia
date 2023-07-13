@@ -3,17 +3,29 @@ class emailValidacao {
     constructor (email) {
         this.email = email;
     }
-    //Essa parte testa o e-mail fornecido pelo usuário para que seja avaliado pelo padrão Regex
+    //Aqui começa a validação do e-mail fornecido
     validar() {
+
+        //Aqui, a posição do caractere "@" é buscada no e-mail fornecido;
         const posicaoArroba = this.email.indexOf("@");
+
+        //Por sua vez, aqui a posição do caractere "." é buscada no e-mail juntamente com a posição do arroba;
         const posicaoPonto = this.email.indexOf(".", posicaoArroba);
 
+        //Nessa condicional, ocorre uma verificação da existência de um "@" e um "." após ele;
         if (posicaoArroba > -1 && posicaoPonto > posicaoArroba) {
+
+            //É extraido o trecho do endereço de e-mail que imediatamente sucede o "@";
             const depoisArroba = this.email.substring(posicaoArroba + 1, posicaoPonto);
+
+            //Ocorre a verificação se o depoisArroba possui ao menos 5 caracteres;
             if (depoisArroba.length >= 5) {
+
+                //Caso todas as condições sejam satisfeitas, o e-mail fornecido é julgado válido e enviado;
                 return true;
             }
         }
+        //Caso contrário, ele será declarado inválido e o usuário terá que corrigí-lo;
         return false;
     }
 }
