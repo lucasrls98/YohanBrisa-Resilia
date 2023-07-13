@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./src/css/style.css" />
+    <script src="/src/JS/login.js" defer></script>
   </head>
 
   <body class="d-flex flex-column min-vh-100">
@@ -39,11 +40,11 @@
             <form>
               <div class="mb-3">
                 <label for="loginEmail" class="form-label">Email</label>
-                <input type="email" class="form-control" id="loginEmail" />
+                <input type="email" class="form-control" id="loginEmail" placeholder="Digite seu email" required/>
               </div>
               <div class="mb-3">
                 <label for="loginSenha" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="loginSenha" />
+                <input type="password" class="form-control" id="loginSenha" placeholder="Digite sua senha" required/>
               </div>
               <button type="submit" class="btn btn-light-bg">
                 Entrar na Conta
@@ -123,11 +124,9 @@
               refrigerantes ©YohanBrisa
             </p>
             <div class="d-grid gap-2 col-8 mx-auto">
-              <a class="btn btn-outline-light-home" href="#"
-                >Assinatura Mensal</a
-              >
-              <a class="btn btn-light-home" href="#"
-                >Assinatura Anual com DESCONTO</a
+              
+              <a class="btn btn-light-home" href="/src/pages/assine.html"
+                >Assine Já!</a
               >
             </div>
           </div>
